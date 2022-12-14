@@ -27,7 +27,7 @@ All of this is on my todo list and will only get better.
 6. It will then send the command to the Windows box if everything is configured correctly
 7. After the command has ran you will be back at the terminal ready to type another command. History is collected at the top.
 8. Type `exit` to exit or `clear` to clear history
-9. You can type ```!!1''' or replace whatever number is on the history for the command you want to run to execute
+9. You can type `!!1` or replace whatever number is on the history for the command you want to run to execute
 
 # Future additions
 
