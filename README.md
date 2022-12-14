@@ -34,3 +34,7 @@ All of this is on my todo list and will only get better.
 1. Credential manager
 2. Logging command history to file
 3. Removing the Ansible type output and make it more Powershell like.
+4. Parameter names for main.py with help file
+5. Uploading to Pypi
+6. Intelliegence to be directory aware of when you send commands so when you `cd` to a directory and you send another command
+   it will tack on that directory structure for you just like you were at the terminal of the machine itself.
