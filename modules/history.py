@@ -4,7 +4,7 @@ from pathlib import Path
 filename = f"{str(Path.home())}/.pywinterminal/history.txt"
 
 
-def parse(input_command: str) -> str:
+def parse_history(input_command: str) -> None:
     """Returns and parses predefined commands and history for console
 
     Args:
@@ -19,30 +19,28 @@ def parse(input_command: str) -> str:
     # parses !! from the command if user enters a number from history similar to bash shell
     if "!!" in input_command:
         input_command = history[int(input_command.replace("!!", ""))]
-
-    # if exit is typed exit gracefully
-    if "exit" in input_command:
-        exit()
-
-    # clears history
-    if "clear" in input_command:
-        os.remove(filename)
+        input_command = (
+            input_command.replace("\n", "")
+            if type(input_command) is str
+            else input_command.join(" ")
+        )
 
     return input_command
 
 
-def create_history() -> bool:
+def create_history() -> list:
     """Creates history file
 
     Returns:
-        bool: True or False
+        list: empty
     """
     try:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
         open(filename, "w")
-        return True
-    except:
-        return False
+    except Exception as e:
+        print(e)
+
+    return []
 
 
 def append_history(history: str) -> bool:
