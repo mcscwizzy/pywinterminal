@@ -10,7 +10,7 @@ while getopts ":c:s:" opt; do
 done
 
 if [ -z "$command" ] || [ -z "$server" ] ; then
-  echo "-c command -s server -i index"
+  echo "-c command -s server"
 else
   ansible_password=your_username
   ansible_username=p@55w0rd
