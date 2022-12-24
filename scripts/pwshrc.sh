@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts ":c:s:i:" opt; do
+while getopts ":c:s:" opt; do
   case $opt in
     c) command="$OPTARG"
     ;;
