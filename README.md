@@ -26,15 +26,15 @@ All of this is on my todo list and will only get better.
 5. This will open a mock terminal. You can put any Powershell command you want including piped commands as well. Then press ENTER
 6. It will then send the command to the Windows box if everything is configured correctly
 7. After the command has ran you will be back at the terminal ready to type another command. History is collected at the top.
-8. Type `exit` to exit or `clear` to clear history
+8. Type `exit` to exit or `clear` to clear history or 'history' to view history
 9. You can type `!!1` or replace whatever number is on the history for the command you want to run to execute
+10. History is stored in userprofile/.pywintermina/history.txt
 
 # Future additions
 
 1. Credential manager
-2. Logging command history to file
-3. Removing the Ansible type output and make it more Powershell like.
-4. Parameter names for main.py with help file
-5. Uploading to Pypi
-6. Intelliegence to be directory aware of when you send commands so when you `cd` to a directory and you send another command
+2. Removing the Ansible type output and make it more Powershell like.
+3. Parameter names for main.py with help file
+4. Uploading to Pypi
+5. Intelliegence to be directory aware of when you send commands so when you `cd` to a directory and you send another command
    it will tack on that directory structure for you just like you were at the terminal of the machine itself.
