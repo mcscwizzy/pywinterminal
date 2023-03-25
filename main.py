@@ -7,14 +7,17 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "--computerName", help="The computername of the client you wish to connect to."
+        "-c, --computername",
+        help="The computername of the client you wish to connect to.",
     )
-    parser.add_argument("--userName", help="Username used to connect to the client.")
-    parser.add_argument("--password", help="Password used with the username")
+    parser.add_argument(
+        "-u, --username", help="Username used to connect to the computername."
+    )
+    parser.add_argument("-p, --password", help="Password used with the username")
     args = parser.parse_args()
 
-    computername = args.computerName
-    username = args.userName
+    computername = args.computername
+    username = args.username
     password = args.password
 
     start(computername, username, password)

@@ -9,7 +9,9 @@ the default way to remotely communicate and send commands to Windows.
 
 # How does it work
 
-Instead of reinventing the wheel I decided to use what I had, and that was Ansible. Ansible does a great job of communicating with Windows boxes via pywinrm and can execute adhoc commands. That is exactly what this does. While this is not a true TTY terminal it allows you to keep entering commands while maintaining a mock session. It's not perfect, but it works!
+Instead of reinventing the wheel I decided to use what I had, and that was Ansible. Ansible does a great job of communicating with Windows boxes via pywinrm and can execute adhoc commands. That is exactly what this does. While this is not a true terminal it allows you to keep entering commands while maintaining a mock session. 
+
+Terminal maintains directory awareness. If you type `cd c:\temp` it will change into that directory, and maintain that you are in that directory next time you run a command. So it will feel like you are at a Powershell prompt running commands!
 
 # Caution
 
@@ -20,21 +22,11 @@ All of this is on my todo list and will only get better.
 
 1. Install python 3.11
 2. Make sure you have Ansible installed
-3. Enter your username and password for the Windows box you are connecting to in the pwshrc.sh file
-4. Run `python main.py windowsserver.domain.com` or `python main.py windowsserver.domain.com,windowsserver2.domain.com` as
-   it can run commands on multiple hosts at the same time
-5. This will open a mock terminal. You can put any Powershell command you want including piped commands as well. Then press ENTER
-6. It will then send the command to the Windows box if everything is configured correctly
-7. After the command has ran you will be back at the terminal ready to type another command. History is collected at the top.
-8. Type `exit` to exit or `clear` to clear history or 'history' to view history
-9. You can type `!!1` or replace whatever number is on the history for the command you want to run to execute
-10. History is stored in userprofile/.pywintermina/history.txt
+3. Run `python main.py --copmuterName computer1 --username username --password password1` 
+4. This will open a mock terminal. You can put any Powershell command you want including piped commands as well. Then press ENTER
+5. It will then send the command to the Windows box if everything is configured correctly
+6. After the command has ran you will be back at the terminal ready to type another command.
+7. Type `exit` to exit or `clear` to clear history or `history` to view history
+8. You can type `!!1` or replace whatever number is on the history for the command you want to run to execute
+9.  History is stored in userprofile/.pywintermina/history.txt
 
-# Future additions
-
-1. Credential manager
-2. Removing the Ansible type output and make it more Powershell like.
-3. Parameter names for main.py with help file
-4. Uploading to Pypi
-5. Intelliegence to be directory aware of when you send commands so when you `cd` to a directory and you send another command
-   it will tack on that directory structure for you just like you were at the terminal of the machine itself.

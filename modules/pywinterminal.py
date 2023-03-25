@@ -4,7 +4,7 @@ from modules.predefined_commands import *
 
 
 def start(computername: str, username: str, password: str) -> None:
-    """Starts the tty terminal session
+    """Starts the terminal session
 
     Args:
         computername (str): computername to connect to
